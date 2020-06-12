@@ -5,8 +5,8 @@ const UserController = {
         const userSave = new userInfo(req.body);
         userSave.save().then((data) => {
 
-            console.log("data has been saved successfully");
-            res.status(200).send(data);
+            console.log("Data has been saved successfully");
+            res.status(200).send("Data has been saved successfully");
 
         }).catch(err => {
             console.log("error", err)
