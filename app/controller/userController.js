@@ -2,15 +2,7 @@ const { userInfo } = require("../models/userModel");
 
 const UserController = {
     saveUser: (req, res) => {
-        formdata= req.body;
-        // formData = {
-        //     name: "Raaj",
-        //     dateOfBirth: "20-04-1999",
-        //     sex: 'm',
-        //     department: 'Design',
-        //     salary: 30007
-        // }
-        const userSave = new userInfo(formData);
+        const userSave = new userInfo(req.body);
         userSave.save().then((data) => {
 
             console.log("data has been saved successfully");
