@@ -2,13 +2,14 @@ const { userInfo } = require("../models/userModel");
 
 const UserController = {
     saveUser: (req, res) => {
-        formData = {
-            name: "Raaj",
-            dateOfBirth: "20-04-1999",
-            sex: 'm',
-            department: 'Design',
-            salary: 30007
-        }
+        formdata= req.body;
+        // formData = {
+        //     name: "Raaj",
+        //     dateOfBirth: "20-04-1999",
+        //     sex: 'm',
+        //     department: 'Design',
+        //     salary: 30007
+        // }
         const userSave = new userInfo(formData);
         userSave.save().then((data) => {
 
@@ -30,6 +31,7 @@ const UserController = {
         })
     },
     updateRecord: (req, res) => {
+        const query = req.query
         userInfo.findOneAndUpdate(
             { name: 'Manish' },
             {
