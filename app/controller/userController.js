@@ -6,7 +6,7 @@ const UserController = {
         userSave.save().then((data) => {
 
             console.log("Data has been saved successfully");
-            res.status(200).send("Data has been saved successfully");
+            res.status(200).json("Data has been saved successfully");
 
         }).catch(err => {
             console.log("error", err)
