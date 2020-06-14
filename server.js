@@ -5,7 +5,6 @@ const userRoutes = require("./app/routes/userRoutes");
 const config = require("./app/config/config");
 
 const app = express();
-app.use(cors())
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -19,6 +18,8 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
+app.use(cors())
+
 //Connect to Mongo DB
 mongoose
   .connect(config.getAtlasDbString(), { useNewUrlParser: true })
