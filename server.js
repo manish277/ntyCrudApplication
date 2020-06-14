@@ -5,6 +5,7 @@ const userRoutes = require("./app/routes/userRoutes");
 const config = require("./app/config/config");
 
 const app = express();
+app.use(cors())
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
