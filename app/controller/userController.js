@@ -27,12 +27,13 @@ const UserController = {
         userInfo.findOneAndUpdate(
             req.query,
             {
-                $set: {
-                    name: 'Ashish',
-                    salary: 45000
-                    // name: req.body.name,
-                    // quote: req.body.quote
-                }
+                $set: req.body
+                //  {
+                //     name: 'Ashish',
+                //     salary: 45000
+                //     // name: req.body.name,
+                //     // quote: req.body.quote
+                // }
             },
             {
                 upsert: true
