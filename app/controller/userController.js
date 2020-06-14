@@ -28,12 +28,7 @@ const UserController = {
             req.query,
             {
                 $set: req.body
-                //  {
-                //     name: 'Ashish',
-                //     salary: 45000
-                //     // name: req.body.name,
-                //     // quote: req.body.quote
-                // }
+
             },
             {
                 upsert: true
@@ -42,16 +37,16 @@ const UserController = {
             console.log("Updated Data", result)
         }).catch(error => console.error(error))
     },
-    deleteData:(req, res)=> {
-        data={name:'Raaj'}
-        userInfo.deleteOne(req.query  )
-        .then(result => {
-          if (result.deletedCount === 0) {
-            return res.json('No data to delete')
-          }
-          res.json(`Deleted data`)
-        })
-        .catch(error => console.error(error))
+    deleteData: (req, res) => {
+        data = { name: 'Raaj' }
+        userInfo.deleteOne(req.query)
+            .then(result => {
+                if (result.deletedCount === 0) {
+                    return res.json('No data to delete')
+                }
+                res.json(`Deleted data`)
+            })
+            .catch(error => console.error(error))
     }
 };
 module.exports = UserController;
