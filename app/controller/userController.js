@@ -43,7 +43,7 @@ const UserController = {
     },
     deleteData:(req, res)=> {
         data={name:'Raaj'}
-        userInfo.deleteOne(data)
+        userInfo.deleteOne(req.query  )
         .then(result => {
           if (result.deletedCount === 0) {
             return res.json('No data to delete')
