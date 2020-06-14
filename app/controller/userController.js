@@ -25,7 +25,7 @@ const UserController = {
     updateRecord: (req, res) => {
         const query = req.query
         userInfo.findOneAndUpdate(
-            { name: 'Manish' },
+            req.query,
             {
                 $set: {
                     name: 'Ashish',
