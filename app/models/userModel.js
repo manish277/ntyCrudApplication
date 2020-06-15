@@ -8,6 +8,7 @@ var userInfoSchema = new Schema({
     department:String,
     salary:Number,
     resume:String,
+    createdAt: new Date(),
 
 });
 const userInfo= mongoose.model('ntyDB',userInfoSchema,'ntyDB');
